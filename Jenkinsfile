@@ -17,18 +17,18 @@ pipeline {
     }
     stage('Terraform Init') {
       steps {
-        sh "terraform init "
+        sh "cd terraform && terraform init "
       }
     }
     stage('Terraform Plan') {
       steps {
-        sh "terraform plan -out=tfplan "
+        sh "cd terraform && terraform plan -out=tfplan "
       }
     }
     stage('Terraform Apply') {
       steps {
         input 'Apply Plan'
-        sh "terraform apply -input=false tfplan"
+        sh "cd terraform && terraform apply -input=false tfplan"
       }
     }
   }
