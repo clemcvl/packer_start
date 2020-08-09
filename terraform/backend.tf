@@ -2,6 +2,6 @@ terraform {
   backend "s3" {
     bucket = "mypackertfstates"
     key    = "tfstates/tftsates"
-    region = "ey-west-3"
+    region = "eu-west-3"
   }
 }
