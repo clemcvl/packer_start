@@ -12,7 +12,7 @@ pipeline {
   stages {
    stage('clone repo') {
       steps {
-        sh "git clone git@github.com:clemcvl/packer_start.git && cd packer_start/terraform"
+        sh "cd packer_start/terraform"
       }
     }
     stage('Terraform Init') {
