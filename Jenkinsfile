@@ -6,8 +6,8 @@ pipeline {
   }
   environment {
     TF_IN_AUTOMATION = 'true'
-    TF_VAR_AWS_ACCESS_KEY_ID = "${params.AWS_ACCESS_KEY_ID}"
-    TF_VAR_AWS_SECRET_ACCESS_KEY = "${params.AWS_SECRET_ACCESS_KEY}"
+    AWS_ACCESS_KEY_ID = "${params.AWS_ACCESS_KEY_ID}"
+    AWS_SECRET_ACCESS_KEY = "${params.AWS_SECRET_ACCESS_KEY}"
   }
   stages {
    stage('clone repo') {
