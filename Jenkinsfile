@@ -10,9 +10,14 @@ pipeline {
     AWS_SECRET_ACCESS_KEY = "${params.AWS_SECRET_ACCESS_KEY}"
   }
   stages {
+   stage('clone repo') {
+      steps {
+        sh "git clone git@github.com:clemcvl/packer_start.git && cd packer_start/terraform"
+      }
+    }
     stage('Terraform Init') {
       steps {
-        sh "${env.TERRAFORM_HOME}/terraform init -input=false"
+        sh "terraform init -input=false"
       }
     }
     stage('Terraform Plan') {
