@@ -12,7 +12,7 @@ pipeline {
   stages {
    stage('clone repo') {
       steps {
-        sh "ls -al && cd terraform && ls -al"
+        sh "ls -al && cd terraform && ls -al && env"
       }
     }
     stage('Terraform Init') {
